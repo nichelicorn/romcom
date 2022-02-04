@@ -1,8 +1,6 @@
 // CURRENT TASK
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-// * For both the Make New Cover form section and the Saved Covers section:
-// * In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
 
 
 // Create variables targetting the relevant DOM elements here 👇
@@ -143,6 +141,7 @@ function showHome(event) {
   homeView.classList.remove("hidden");
   saveCoverBtn.classList.remove("hidden");
   newCoverBtn.classList.remove("hidden");
+  formView.classList.add("hidden");
   savedView.classList.add("hidden");
   homeBtn.classList.add("hidden");
 };
