@@ -1,7 +1,8 @@
 // CURRENT TASK
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-// * When the Saved Covers view is visible, the “Home” button should be visible
+// * For both the Make New Cover form section and the Saved Covers section:
+// * In summary: Be able to switch between the three views (main poster, form, and saved posters) on the correct button clicks
 
 
 // Create variables targetting the relevant DOM elements here 👇
@@ -37,20 +38,18 @@ let savedCovers = [
 let currentCover;
 
 // Add your event listeners here 👇
-
 // on page load, display a randomly generated cover (image, tagline, title)
 window.addEventListener("load", createRandomCover);
-
 // on newBtn click, generate a new random cover to display in the DOM
 newCoverBtn.addEventListener("click", createRandomCover);
-
 // on saveBtn click, add the current cover to the savedCovers array (should not save duplicate covers)
 
 // on savedBtn click, display view saved-view page (line 26 index.html)
 savedCoversBtn.addEventListener("click", showSaved);
-
 // on makeBtn click, display view form-view page (line 29 index.html)
 makeCoverBtn.addEventListener("click", showForm);
+// on homeBtn click, display the home view
+homeBtn.addEventListener("click", showHome);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -134,6 +133,16 @@ function showSaved(event) {
   savedView.classList.remove("hidden");
   homeBtn.classList.remove("hidden");
   homeView.classList.add("hidden");
+  formView.classList.add("hidden");
   newCoverBtn.classList.add("hidden");
   saveCoverBtn.classList.add("hidden");
+};
+
+function showHome(event) {
+  event.preventDefault();
+  homeView.classList.remove("hidden");
+  saveCoverBtn.classList.remove("hidden");
+  newCoverBtn.classList.remove("hidden");
+  savedView.classList.add("hidden");
+  homeBtn.classList.add("hidden");
 };
