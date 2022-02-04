@@ -5,11 +5,7 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ## To do
 
 ### Project development
-* 1: Show random cover
-
 * 2: Switching views
-  * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-  * When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
   * When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
   * When the Form view is visible, the “Home” button should be visible
   * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden

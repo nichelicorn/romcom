@@ -1,7 +1,8 @@
 // CURRENT TASK
-// * 1: Show random cover
-// * Every time the user clicks the Show New Random Cover button, the random cover is displayed 
-// * hint: you may need to create a function that displays information on the DOM
+// * 2: Switching views
+// * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
+// * When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
+
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -20,6 +21,10 @@ const saveCoverButton = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
 // make your own cover button
 const makeCoverBtn = document.getElementById("makeBtn");
+// home view page
+const homeView = document.getElementById("homeView");
+// form view page
+const formView = document.getElementById("formView");
 
 // We've provided a few variables below
 let savedCovers = [
@@ -40,6 +45,7 @@ newCoverButton.addEventListener("click", createRandomCover);
 // on savedBtn click, display view saved-view page (line 26 index.html)
 
 // on makeBtn click, display view form-view page (line 29 index.html)
+makeCoverBtn.addEventListener("click", showForm);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -105,4 +111,11 @@ function displayDomImageElement(element, image) {
 function displayDomTextElement(element, data) {
   // console.log("data >", data);
   element.innerText = data;
-}
+};
+
+function showForm(event) {
+  event.preventDefault();
+  // console.log("event >", event);
+  formView.classList.remove("hidden");
+  homeView.classList.add("hidden");
+};
