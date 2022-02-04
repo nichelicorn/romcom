@@ -8,8 +8,8 @@ let coverImage = document.getElementById("coverImage");
 // title
 let coverTitle = document.getElementById("coverTitle");
 // tagline
-let adj1 = document.getElementById("adj1");
-let adj2 = document.getElementById("adj2");
+let tag1 = document.getElementById("tag1");
+let tag2 = document.getElementById("tag2");
 // let coverTagline = document.getElementById("coverTagline");
 // new random cover button
 const newCoverButton = document.getElementById("newBtn");
@@ -59,20 +59,20 @@ function uniqueRandomCover() {
   const adjective1 = getRandomElement(descriptors);
   const adjective2 = getRandomElement(descriptors);
 
-  console.log("image >", image);
-  console.log("title >", title);
-  console.log("adjective words >", adjective1, adjective2);
+  // console.log("image >", image);
+  // console.log("title >", title);
+  // console.log("adjective words >", adjective1, adjective2);
 
   // create new Cover object
   const thisCover = new Cover(image, title, adjective1, adjective2);
 
-  console.log("this cover >", thisCover);
+  // console.log("this cover >", thisCover);
 
   // display generated elements to the DOM
   coverImage.src = image;
   coverTitle.innerText = title;
-  adj1.innerText = adjective1;
-  adj2.innerText = adjective2;
+  tag1.innerText = adjective1;
+  tag2.innerText = adjective2;
 };
 
 // function getRandomImage() {
