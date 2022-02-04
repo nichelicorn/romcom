@@ -68,6 +68,8 @@ function createRandomCover() {
 
   // create new Cover object
   const thisCover = new Cover(image, title, adjective1, adjective2);
+  setCurrentCover(thisCover);
+  console.log(`The current cover is`, currentCover);
 
   // console.log("this cover >", thisCover);
 
