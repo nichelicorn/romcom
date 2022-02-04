@@ -1,7 +1,8 @@
 // CURRENT TASK
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-// * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
+// * When the Saved Covers view is visible, the “Home” button should be visible
+
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -127,10 +128,12 @@ function showForm(event) {
   saveCoverBtn.classList.add("hidden");
 };
 
-// * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
 function showSaved(event) {
   event.preventDefault();
-  console.log("event >", event);
-  homeView.classList.add("hidden");
+  // console.log("event >", event);
   savedView.classList.remove("hidden");
+  homeBtn.classList.remove("hidden");
+  homeView.classList.add("hidden");
+  newCoverBtn.classList.add("hidden");
+  saveCoverBtn.classList.add("hidden");
 };
