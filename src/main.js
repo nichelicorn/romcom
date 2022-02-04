@@ -1,6 +1,7 @@
 // CURRENT TASK
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
+// * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -12,9 +13,9 @@ let tag1 = document.getElementById("tag1");
 let tag2 = document.getElementById("tag2");
 // let coverTagline = document.getElementById("coverTagline");
 // new random cover button
-const newCoverButton = document.getElementById("newBtn");
+const newCoverBtn = document.getElementById("newBtn");
 // save cover button
-const saveCoverButton = document.getElementById("saveBtn");
+const saveCoverBtn = document.getElementById("saveBtn");
 // view saved covers button
 const savedCoversBtn = document.getElementById("savedBtn");
 // make your own cover button
@@ -25,6 +26,8 @@ const homeBtn = document.getElementById("homeBtn");
 const homeView = document.getElementById("homeView");
 // form view page
 const formView = document.getElementById("formView");
+// saved covers view page
+const savedView = document.getElementById("savedView");
 
 // We've provided a few variables below
 let savedCovers = [
@@ -38,11 +41,12 @@ let currentCover;
 window.addEventListener("load", createRandomCover);
 
 // on newBtn click, generate a new random cover to display in the DOM
-newCoverButton.addEventListener("click", createRandomCover);
+newCoverBtn.addEventListener("click", createRandomCover);
 
 // on saveBtn click, add the current cover to the savedCovers array (should not save duplicate covers)
 
 // on savedBtn click, display view saved-view page (line 26 index.html)
+savedCoversBtn.addEventListener("click", showSaved);
 
 // on makeBtn click, display view form-view page (line 29 index.html)
 makeCoverBtn.addEventListener("click", showForm);
@@ -119,6 +123,14 @@ function showForm(event) {
   formView.classList.remove("hidden");
   homeBtn.classList.remove("hidden");
   homeView.classList.add("hidden");
-  newCoverButton.classList.add("hidden");
-  saveCoverButton.classList.add("hidden");
+  newCoverBtn.classList.add("hidden");
+  saveCoverBtn.classList.add("hidden");
+};
+
+// * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
+function showSaved(event) {
+  event.preventDefault();
+  console.log("event >", event);
+  homeView.classList.add("hidden");
+  savedView.classList.remove("hidden");
 };
