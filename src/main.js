@@ -78,6 +78,10 @@ function createRandomCover() {
   tag2.innerText = adjective2;
 };
 
+function setCurrentCover(cover) {
+  currentCover = cover;
+};
+
 // function getRandomImage() {
 //   return covers[getRandomIndex(covers)];
 // };
