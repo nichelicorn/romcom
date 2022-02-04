@@ -75,9 +75,12 @@ function createRandomCover() {
   // display generated elements to the DOM
   // coverImage.src = image;
   displayDomImageElement(coverImage, image);
-  coverTitle.innerText = title;
-  tag1.innerText = adjective1;
-  tag2.innerText = adjective2;
+  // coverTitle.innerText = title;
+  displayDomTextElement(coverTitle, title);
+  // tag1.innerText = adjective1;
+  displayDomTextElement(tag1, adjective1);
+  // tag2.innerText = adjective2;
+  displayDomTextElement(tag2, adjective2);
 };
 
 function setCurrentCover(cover) {
@@ -94,11 +97,12 @@ function getRandomElement(array) {
 
 // * hint: you may need to create a function that displays information on the DOM
 function displayDomImageElement(element, image) {
-  console.log("image >", image);
-  console.log("test >", coverImage.src = image);
+  // console.log("image >", image);
+  // console.log("test >", coverImage.src = image);
   element.src = image;
 };
 
-function displayDomTextElement(data) {
-  console.log("data >", data);
+function displayDomTextElement(element, data) {
+  // console.log("data >", data);
+  element.innerText = data;
 }
