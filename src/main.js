@@ -26,6 +26,7 @@ let currentCover;
 // Add your event listeners here 👇
 
 // on page load, display a randomly generated cover (image, tagline, title)
+window.addEventListener("load", uniqueRandomCover);
 
 // on newBtn click, generate a new random cover to display in the DOM
 
@@ -43,9 +44,12 @@ function getRandomIndex(array) {
 
 // write a function to generate a random cover
 function uniqueRandomCover() {
-  const image = getRandomIndex(data.covers);
-  // const title = ;
-  // const tagline = ;
+  const image = covers[getRandomIndex(covers)];
+  const title = titles[getRandomIndex(titles)];
+  const tagline1 = descriptors[getRandomIndex(descriptors)];
+  const tagline2 = descriptors[getRandomIndex(descriptors)];
 
   console.log("image >", image);
+  console.log("title >", title);
+  console.log("tagline words >", tagline1, tagline2);  
 }
