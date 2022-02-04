@@ -54,14 +54,14 @@ function uniqueRandomCover() {
   const adjective1 = getRandomElement(descriptors);
   const adjective2 = getRandomElement(descriptors);
 
-  console.log("image >", image);
-  console.log("title >", title);
-  console.log("adjective words >", adjective1, adjective2);  
-}
-
-function getRandomImage() {
-  return covers[getRandomIndex(covers)];
+  // console.log("image >", image);
+  // console.log("title >", title);
+  // console.log("adjective words >", adjective1, adjective2);  
 };
+
+// function getRandomImage() {
+//   return covers[getRandomIndex(covers)];
+// };
 
 function getRandomElement(array) {
   return array[getRandomIndex(array)];
