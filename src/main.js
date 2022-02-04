@@ -2,7 +2,6 @@
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
 
-
 // Create variables targetting the relevant DOM elements here 👇
 // image
 let coverImage = document.getElementById("coverImage");
@@ -20,6 +19,8 @@ const saveCoverButton = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
 // make your own cover button
 const makeCoverBtn = document.getElementById("makeBtn");
+// home button
+const homeBtn = document.getElementById("homeBtn");
 // home view page
 const homeView = document.getElementById("homeView");
 // form view page
@@ -116,6 +117,7 @@ function showForm(event) {
   event.preventDefault();
   // console.log("event >", event);
   formView.classList.remove("hidden");
+  homeBtn.classList.remove("hidden");
   homeView.classList.add("hidden");
   newCoverButton.classList.add("hidden");
   saveCoverButton.classList.add("hidden");

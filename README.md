@@ -6,8 +6,7 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ### Project development
 * 2: Switching views
-  * When the Form view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
-  * When the Form view is visible, the “Home” button should be visible
+
   * When a user clicks the “View Saved Covers” button, we should see the saved covers section, and the homepage view should be hidden
   * When the Saved Covers view is visible, the “Show New Random Cover” and “Save Cover” buttons should be hidden
   * When the Saved Covers view is visible, the “Home” button should be visible
