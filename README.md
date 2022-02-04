@@ -7,7 +7,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ### Project development
 * 3: Creating a new cover
 
-  * Change back to the main home view (hiding the form view again)
   * Display the newly created cover image, title, and descriptors in the main cover
 * 4: Saving & viewing covers
   * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array

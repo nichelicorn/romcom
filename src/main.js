@@ -2,7 +2,8 @@
 // * 3: Creating a new cover
 // * In the new cover form view, users should be able to fill out the four input fields and then hit the Make My Book button
 // * When the Make My Book button is clicked, several things will happen: 
-// * Use the values from the inputs to create a new instance of the Cover class
+// * Change back to the main home view (hiding the form view again)
+
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -167,8 +168,11 @@ function createCustomCover(event) {
   // console.log("descriptor2 >", descriptor2);
   // console.log("descriptors array >", descriptors);
 
-  // * Use the values from the inputs to create a new instance of the Cover class
   currentCover = new Cover(userCover, userTitle, descriptor1, descriptor2);
 
-  console.log("current cover >", currentCover);
+  // console.log("current cover >", currentCover);
+
+  // * Change back to the main home view (hiding the form view again)
+
+  showHome(event);
 };
