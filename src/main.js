@@ -1,7 +1,8 @@
 // CURRENT TASK
-// * 2: Switching views
-// * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-
+// * 3: Creating a new cover
+// * In the new cover form view, users should be able to fill out the four input fields and then hit the Make My Book button
+// * When the Make My Book button is clicked, several things will happen: 
+// * Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -22,6 +23,8 @@ const savedCoversBtn = document.getElementById("savedBtn");
 const makeCoverBtn = document.getElementById("makeBtn");
 // home button
 const homeBtn = document.getElementById("homeBtn");
+// make book button
+const makeBookBtn = document.getElementById("makeBookBtn");
 // home view page
 const homeView = document.getElementById("homeView");
 // form view page
@@ -48,6 +51,8 @@ savedCoversBtn.addEventListener("click", showSaved);
 makeCoverBtn.addEventListener("click", showForm);
 // on homeBtn click, display the home view
 homeBtn.addEventListener("click", showHome);
+// on makeBookBtn click, make custom cover
+makeBookBtn.addEventListener("click", createCustomCover);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -144,4 +149,22 @@ function showHome(event) {
   formView.classList.add("hidden");
   savedView.classList.add("hidden");
   homeBtn.classList.add("hidden");
+};
+
+// * Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
+function createCustomCover(event) {
+  event.preventDefault();
+  const userCover = document.getElementById("userCover").value;
+  const userTitle = document.getElementById("userTitle").value;
+  const descriptor1 = document.getElementById("descriptor1").value;
+  const descriptor2 = document.getElementById("descriptor2").value;
+  
+  // push url into covers array
+  covers.push(userCover);
+  // push title into titles array
+  titles.push(userTitle);
+  // push descriptors into descriptors array
+  descriptors = [...descriptors, descriptor1, descriptor2];
+  // console.log("descriptor2 >", descriptor2);
+  // console.log("descriptors array >", descriptors);
 };
