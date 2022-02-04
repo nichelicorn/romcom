@@ -17,21 +17,28 @@ const savedCoversBtn = document.getElementById("savedBtn");
 // make your own cover button
 const makeCoverBtn = document.getElementById("makeBtn");
 
-console.log("coverImage >", coverImage);
-
 // We've provided a few variables below
-var savedCovers = [
+let savedCovers = [
   new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
 ];
-var currentCover;
+let currentCover;
 
 // Add your event listeners here 👇
 
+// on page load, display a randomly generated cover (image, tagline, title)
+
+// on newBtn click, generate a new random cover to display in the DOM
+
+// on saveBtn click, add the current cover to the savedCovers array (should not save duplicate covers)
+
+// on savedBtn click, display view saved-view page (line 26 index.html)
+
+// on makeBtn click, display view form-view page (line 29 index.html)
 
 // Create your event handlers and other functions here 👇
-
-
 // We've provided one function to get you started
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 }
+
+// write a function to generate a random cover
