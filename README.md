@@ -54,3 +54,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 * refactor CSS to create responsive layout
 * deploy to GitHub
 * launch GitHub pages
+
+#### Credits and Resources
+* Created by nichelicorn, based on (this)[https://frontend.turing.edu/projects/module-1/romcom-pair.html] project by (Turing School)[https://turing.edu/]

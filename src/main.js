@@ -1,5 +1,23 @@
-// Create variables targetting the relevant DOM elements here 👇
+// CURRENT TASK
+//   * When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
 
+// Create variables targetting the relevant DOM elements here 👇
+// image
+const coverImage = document.getElementById("coverImage");
+// title
+const coverTitle = document.getElementById("coverTitle");
+// tagline
+const coverTagline = document.getElementById("coverTagline");
+// new random cover button
+const newCoverButton = document.getElementById("newBtn");
+// save cover button
+const saveCoverButton = document.getElementById("saveBtn");
+// view saved covers button
+const savedCoversBtn = document.getElementById("savedBtn");
+// make your own cover button
+const makeCoverBtn = document.getElementById("makeBtn");
+
+console.log("coverImage >", coverImage);
 
 // We've provided a few variables below
 var savedCovers = [
