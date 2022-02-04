@@ -1,4 +1,8 @@
 // CURRENT TASK
+// * 1: Show random cover
+  // * Every time the user clicks the Show New Random Cover button, a new random cover is created
+  // * hint: you may need to update the value of the provided currentCover variable
+  // * hint: use that Cover class!
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -30,6 +34,7 @@ let currentCover;
 window.addEventListener("load", createRandomCover);
 
 // on newBtn click, generate a new random cover to display in the DOM
+newCoverButton.addEventListener("click", createRandomCover);
 
 // on saveBtn click, add the current cover to the savedCovers array (should not save duplicate covers)
 
