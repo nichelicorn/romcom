@@ -45,15 +45,18 @@ function getRandomIndex(array) {
 // write a function to generate a random cover
 function uniqueRandomCover() {
   // const image = covers[getRandomIndex(covers)];
-  const image = getRandomImage();
+  // const image = getRandomImage();
+  const image = getRandomElement(covers);
   // const title = titles[getRandomIndex(titles)];
   const title = getRandomElement(titles);
-  const tagline1 = descriptors[getRandomIndex(descriptors)];
-  const tagline2 = descriptors[getRandomIndex(descriptors)];
+  // const adjective1 = descriptors[getRandomIndex(descriptors)];
+  // const adjective2 = descriptors[getRandomIndex(descriptors)];
+  const adjective1 = getRandomElement(descriptors);
+  const adjective2 = getRandomElement(descriptors);
 
   console.log("image >", image);
   console.log("title >", title);
-  console.log("tagline words >", tagline1, tagline2);  
+  console.log("adjective words >", adjective1, adjective2);  
 }
 
 function getRandomImage() {
