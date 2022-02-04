@@ -1,13 +1,16 @@
 // CURRENT TASK
 //   * When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
+// have data, now need to use that data to display elements to the DOM
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
-const coverImage = document.getElementById("coverImage");
+let coverImage = document.getElementById("coverImage");
 // title
-const coverTitle = document.getElementById("coverTitle");
+let coverTitle = document.getElementById("coverTitle");
 // tagline
-const coverTagline = document.getElementById("coverTagline");
+let adj1 = document.getElementById("adj1");
+let adj2 = document.getElementById("adj2");
+// let coverTagline = document.getElementById("coverTagline");
 // new random cover button
 const newCoverButton = document.getElementById("newBtn");
 // save cover button
@@ -44,9 +47,11 @@ function getRandomIndex(array) {
 
 // write a function to generate a random cover
 function uniqueRandomCover() {
+  // assign cover elements
   // const image = covers[getRandomIndex(covers)];
   // const image = getRandomImage();
   const image = getRandomElement(covers);
+  coverImage.src = image;
   // const title = titles[getRandomIndex(titles)];
   const title = getRandomElement(titles);
   // const adjective1 = descriptors[getRandomIndex(descriptors)];
@@ -54,9 +59,20 @@ function uniqueRandomCover() {
   const adjective1 = getRandomElement(descriptors);
   const adjective2 = getRandomElement(descriptors);
 
-  // console.log("image >", image);
-  // console.log("title >", title);
-  // console.log("adjective words >", adjective1, adjective2);  
+  console.log("image >", image);
+  console.log("title >", title);
+  console.log("adjective words >", adjective1, adjective2);
+
+  // create new Cover object
+  const thisCover = new Cover(image, title, adjective1, adjective2);
+
+  console.log("this cover >", thisCover);
+
+  // display generated elements to the DOM
+  coverImage.src = image;
+  coverTitle.innerText = title;
+  adj1.innerText = adjective1;
+  adj2.innerText = adjective2;
 };
 
 // function getRandomImage() {
