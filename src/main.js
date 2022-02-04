@@ -1,8 +1,7 @@
 // CURRENT TASK
 // * 1: Show random cover
-  // * Every time the user clicks the Show New Random Cover button, a new random cover is created
-  // * hint: you may need to update the value of the provided currentCover variable
-  // * hint: use that Cover class!
+// * Every time the user clicks the Show New Random Cover button, the random cover is displayed 
+// * hint: you may need to create a function that displays information on the DOM
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -74,7 +73,8 @@ function createRandomCover() {
   // console.log("this cover >", thisCover);
 
   // display generated elements to the DOM
-  coverImage.src = image;
+  // coverImage.src = image;
+  displayDomImageElement(image);
   coverTitle.innerText = title;
   tag1.innerText = adjective1;
   tag2.innerText = adjective2;
@@ -91,3 +91,14 @@ function setCurrentCover(cover) {
 function getRandomElement(array) {
   return array[getRandomIndex(array)];
 };
+
+// * hint: you may need to create a function that displays information on the DOM
+function displayDomImageElement(image) {
+  console.log("image >", image);
+  console.log("test >", coverImage.src = image);
+  coverImage.src = image;
+};
+
+function displayDomTextElement(data) {
+  console.log("data >", data);
+}

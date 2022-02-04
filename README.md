@@ -6,11 +6,7 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ### Project development
 * 1: Show random cover
-  * Every time the user clicks the Show New Random Cover button, a new random cover is created
-  * hint: you may need to update the value of the provided currentCover variable
-  * hint: use that Cover class!
-  * Every time the user clicks the Show New Random Cover button, the random cover is displayed 
-  * hint: you may need to create a function that displays information on the DOM
+
 * 2: Switching views
   * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
   * When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
