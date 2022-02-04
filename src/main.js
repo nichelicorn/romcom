@@ -42,3 +42,10 @@ function getRandomIndex(array) {
 }
 
 // write a function to generate a random cover
+function uniqueRandomCover() {
+  const image = getRandomIndex(data.covers);
+  // const title = ;
+  // const tagline = ;
+
+  console.log("image >", image);
+}
