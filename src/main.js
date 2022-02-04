@@ -2,7 +2,7 @@
 // * 3: Creating a new cover
 // * In the new cover form view, users should be able to fill out the four input fields and then hit the Make My Book button
 // * When the Make My Book button is clicked, several things will happen: 
-// * Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
+// * Use the values from the inputs to create a new instance of the Cover class
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -151,7 +151,6 @@ function showHome(event) {
   homeBtn.classList.add("hidden");
 };
 
-// * Save the submitted data into the respective arrays (cover URL into the covers array, title string into the titles array, etc) so that future random covers can use the user-created data
 function createCustomCover(event) {
   event.preventDefault();
   const userCover = document.getElementById("userCover").value;
@@ -167,4 +166,9 @@ function createCustomCover(event) {
   descriptors = [...descriptors, descriptor1, descriptor2];
   // console.log("descriptor2 >", descriptor2);
   // console.log("descriptors array >", descriptors);
+
+  // * Use the values from the inputs to create a new instance of the Cover class
+  currentCover = new Cover(userCover, userTitle, descriptor1, descriptor2);
+
+  console.log("current cover >", currentCover);
 };

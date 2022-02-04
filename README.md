@@ -7,7 +7,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ### Project development
 * 3: Creating a new cover
 
-  * Use the values from the inputs to create a new instance of the Cover class
   * Change back to the main home view (hiding the form view again)
   * Display the newly created cover image, title, and descriptors in the main cover
 * 4: Saving & viewing covers
@@ -32,4 +31,5 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 * launch GitHub pages
 
 #### Credits and Resources
-* Created by nichelicorn, based on (this)[https://frontend.turing.edu/projects/module-1/romcom-pair.html] project by (Turing School)[https://turing.edu/]
+* Created by nichelicorn, based on [this](https://frontend.turing.edu/projects/module-1/romcom-pair.html) project by [Turing School](https://turing.edu/)
+* [Spread syntax(...) on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
