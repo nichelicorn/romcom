@@ -1,6 +1,4 @@
 // CURRENT TASK
-//   * When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
-// have data, now need to use that data to display elements to the DOM
 
 // Create variables targetting the relevant DOM elements here 👇
 // image

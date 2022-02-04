@@ -5,8 +5,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ## To do
 
 ### Project development
-* 0: Main page
-  * When the page loads, we should see a cover with a randomly selected image, title, and tagline which includes two random descriptors
 * 1: Show random cover
   * Every time the user clicks the Show New Random Cover button, a new random cover is created
   * hint: you may need to update the value of the provided currentCover variable
