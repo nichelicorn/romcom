@@ -74,7 +74,7 @@ function createRandomCover() {
 
   // display generated elements to the DOM
   // coverImage.src = image;
-  displayDomImageElement(image);
+  displayDomImageElement(coverImage, image);
   coverTitle.innerText = title;
   tag1.innerText = adjective1;
   tag2.innerText = adjective2;
@@ -93,10 +93,10 @@ function getRandomElement(array) {
 };
 
 // * hint: you may need to create a function that displays information on the DOM
-function displayDomImageElement(image) {
+function displayDomImageElement(element, image) {
   console.log("image >", image);
   console.log("test >", coverImage.src = image);
-  coverImage.src = image;
+  element.src = image;
 };
 
 function displayDomTextElement(data) {
