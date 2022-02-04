@@ -1,7 +1,6 @@
 // CURRENT TASK
 // * 2: Switching views
 // * NOTE: in this iteration, you are not worrying about making the form WORK, and you are not worrying about saving or displaying covers. You simply want to make sure the views can be switched when you click the appropriate buttons.
-// * When a user clicks the “Make Your Own Cover” button, we should see the form, and the homepage view should be hidden
 
 
 // Create variables targetting the relevant DOM elements here 👇
@@ -118,4 +117,6 @@ function showForm(event) {
   // console.log("event >", event);
   formView.classList.remove("hidden");
   homeView.classList.add("hidden");
+  newCoverButton.classList.add("hidden");
+  saveCoverButton.classList.add("hidden");
 };
