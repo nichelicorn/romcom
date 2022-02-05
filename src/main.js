@@ -3,6 +3,7 @@
 // * In the new cover form view, users should be able to fill out the four input fields and then hit the Make My Book button
 // * When the Make My Book button is clicked, several things will happen: 
 // * Change back to the main home view (hiding the form view again)
+// * Display the newly created cover image, title, and descriptors in the main cover
 
 
 // Create variables targetting the relevant DOM elements here 👇
@@ -82,19 +83,21 @@ function createRandomCover() {
   // create new Cover object
   const thisCover = new Cover(image, title, adjective1, adjective2);
   setCurrentCover(thisCover);
-  console.log(`The current cover is`, currentCover);
+  // console.log(`The current cover is`, currentCover);
 
   // console.log("this cover >", thisCover);
 
   // display generated elements to the DOM
   // coverImage.src = image;
-  displayDomImageElement(coverImage, image);
+  // displayDomImageElement(coverImage, image);
   // coverTitle.innerText = title;
-  displayDomTextElement(coverTitle, title);
+  // displayDomTextElement(coverTitle, title);
   // tag1.innerText = adjective1;
-  displayDomTextElement(tag1, adjective1);
+  // displayDomTextElement(tag1, adjective1);
   // tag2.innerText = adjective2;
-  displayDomTextElement(tag2, adjective2);
+  // displayDomTextElement(tag2, adjective2);
+
+  displayCurrentCover();
 };
 
 function setCurrentCover(cover) {
@@ -172,7 +175,18 @@ function createCustomCover(event) {
 
   // console.log("current cover >", currentCover);
 
-  // * Change back to the main home view (hiding the form view again)
-
   showHome(event);
+  // * Display the newly created cover image, title, and descriptors in the main cover
+
+  displayCurrentCover();
+};
+
+
+function displayCurrentCover() {
+  console.log(`The current cover is`, currentCover);
+  console.log("coverImage >", coverImage);
+  coverImage.src = currentCover.cover;
+  coverTitle.innerText = currentCover.title;
+  tag1.innerText = currentCover.tagline1;
+  tag2.innerText = currentCover.tagline2;
 };

@@ -7,7 +7,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ### Project development
 * 3: Creating a new cover
 
-  * Display the newly created cover image, title, and descriptors in the main cover
 * 4: Saving & viewing covers
   * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
   * If a user clicks the “Save Cover” more than once on a single cover, it will still only be saved once (no duplicates)
