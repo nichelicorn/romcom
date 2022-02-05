@@ -65,11 +65,13 @@ function createCustomCover(event) {
 function saveCurrentCover(event) {
   event.preventDefault();
   
-  if (savedCovers.includes(currentCover)) {
-    alert("This cover is already saved! Having fun? Try making a new cover!");
-  } else {
-    savedCovers.push(currentCover);
-  }
+  // if (savedCovers.includes(currentCover)) {
+  //   alert("This cover is already saved! Having fun? Try making a new cover!");
+  // } else {
+  //   savedCovers.push(currentCover);
+  // }
+
+  savedCovers.includes(currentCover) ? alert("This cover has already been saved. Try making a new cover!") : savedCovers.push(currentCover);
 };
 
 function generateSavedView() {  
