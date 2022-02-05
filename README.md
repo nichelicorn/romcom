@@ -6,7 +6,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ### Project development
 * 4: Saving & viewing covers
-  * All the covers in the savedCovers array should be displayed in the saved covers section
   * Note: None of this needs to persist on page load
 * 5: Deleting Saved Covers
   * From the saved covers view, if a user double clicks a saved poster, it will be deleted

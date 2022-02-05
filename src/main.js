@@ -200,24 +200,27 @@ function saveCurrentCover(event) {
   // console.log("savedCovers >", savedCovers);
 };
 
-// * When a user clicks the “View Saved Covers” button, we should see the saved covers section
+// * All the covers in the savedCovers array should be displayed in the saved covers section
 function generateSavedView() {
+  
   savedCoversSection.innerHTML = "";
-
+  
   let tinyCovers = savedCovers.map(cover => {
     // console.log("cover details >", cover);
     savedCoversSection.innerHTML += `
-      <section class="mini-cover">
-        <img class="cover-image" src="${cover.cover}" id="coverImage">
-        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
-      </section>
+    <section class="mini-cover">
+    <img class="cover-image" src="${cover.cover}" id="coverImage">
+    <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
+    <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
+    <img class="price-tag" src="./assets/price.png">
+    <img class="overlay" src="./assets/overlay.png">
+    </section>
     `;
     // console.log("cover HTML >", cover);
     return cover;
   });
   // display each of the saved covers as a small icon
-  console.log("tiny covers >", tinyCovers);
+  // console.log("tiny covers >", tinyCovers);
+
+  console.log("equality check for length >", savedCovers.length === tinyCovers.length)
 };
