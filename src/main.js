@@ -1,26 +1,25 @@
 // CURRENT TASK
 // basic iteration complete!!
-// * 6: Extensions
 
 // 💐 Welcome to RomCom!
 
 // 🌐 Query Selectors & Global variables
 let coverImage = document.getElementById("coverImage");
 let coverTitle = document.getElementById("coverTitle");
+let currentCover;
+let savedCovers = [];
 let tag1 = document.getElementById("tag1");
 let tag2 = document.getElementById("tag2");
-let savedCovers = [];
-let currentCover;
+const formView = document.getElementById("formView");
+const homeBtn = document.getElementById("homeBtn");
+const homeView = document.getElementById("homeView");
+const makeBookBtn = document.getElementById("makeBookBtn");
+const makeCoverBtn = document.getElementById("makeBtn");
 const newCoverBtn = document.getElementById("newBtn");
 const saveCoverBtn = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
-const makeCoverBtn = document.getElementById("makeBtn");
-const homeBtn = document.getElementById("homeBtn");
-const makeBookBtn = document.getElementById("makeBookBtn");
-const homeView = document.getElementById("homeView");
-const formView = document.getElementById("formView");
-const savedView = document.getElementById("savedView");
 const savedCoversSection = document.getElementById("savedCoversSection");
+const savedView = document.getElementById("savedView");
 
 // 🎧 Event listeners
 window.addEventListener("load", createRandomCover); 
