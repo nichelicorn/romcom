@@ -2,8 +2,9 @@
 // basic iteration complete!!
 // * 6: Extensions
 
+// 💐 Welcome to RomCom!
 
-// Create variables targetting the relevant DOM elements here 👇
+// 🌐 Query Selectors & Global variables
 let coverImage = document.getElementById("coverImage");
 let coverTitle = document.getElementById("coverTitle");
 let tag1 = document.getElementById("tag1");
@@ -21,7 +22,7 @@ const formView = document.getElementById("formView");
 const savedView = document.getElementById("savedView");
 const savedCoversSection = document.getElementById("savedCoversSection");
 
-// Add your event listeners here 👇
+// 🎧 Event listeners
 window.addEventListener("load", createRandomCover); 
 newCoverBtn.addEventListener("click", createRandomCover);
 saveCoverBtn.addEventListener("click", saveCurrentCover);
@@ -31,19 +32,16 @@ homeBtn.addEventListener("click", showHome);
 makeBookBtn.addEventListener("click", createCustomCover);
 savedCoversSection.addEventListener("dblclick", deleteSavedCover);
 
-// Create your event handlers and other functions here 
-// Page functionaity
-
-// Generate a random cover
+// ⚙️ Page functionaity
 function createRandomCover() {
   const image = getRandomElement(covers);
   const title = getRandomElement(titles);
   const adjective1 = getRandomElement(descriptors);
   const adjective2 = getRandomElement(descriptors);
 
-  const thisCover = new Cover(image, title, adjective1, adjective2);
+  const randomCover = new Cover(image, title, adjective1, adjective2);
   
-  setCurrentCover(thisCover);
+  setCurrentCover(randomCover);
   displayCurrentCover();
 };
 
@@ -58,8 +56,9 @@ function createCustomCover(event) {
   titles.push(userTitle);
   descriptors = [...descriptors, descriptor1, descriptor2];
 
-  currentCover = new Cover(userCover, userTitle, descriptor1, descriptor2);
-
+  const thisCover = new Cover(userCover, userTitle, descriptor1, descriptor2);
+  
+  setCurrentCover(thisCover);
   showHome(event);
   displayCurrentCover();
 };

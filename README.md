@@ -20,7 +20,7 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
   * Implement data validation and error handling into the form (disable the button until all fields are filled, provide error messages if data entered is not correct, etc)
   * When a user single clicks a saved cover, create a modal to view it larger
   * Allow users to drag and drop saved posters into whatever order they want them to appear
-
+  * "flatten" saved covers to a single icon / image (currently this is creating an innerHtml that only allows a user to save the `overlay` element)
 
 #### Credits and Resources
 * Created by nichelicorn, based on [this](https://frontend.turing.edu/projects/module-1/romcom-pair.html) project by [Turing School](https://turing.edu/)
