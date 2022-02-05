@@ -229,9 +229,30 @@ function generateSavedView() {
 // * From the saved covers view, if a user double clicks a saved poster, it will be deleted
 // * Hint: How will you update the data model to achieve this? Hint: Look into this user event Note: None of this needs to persist on page load (https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)
 function deleteSavedCover(event) {
-  // console.log("event.target >", event.target);
+  console.log("event >", event);
+  console.log("event.target >", event.target);
   // console.log("closest cover?", event.target.closest(".overlay"));
-  const toDelete = event.target.closest(".overlay");
+  // console.log("event parent?", event.target.parentNode);
 
-  console.log("toDelete >", toDelete);
+  const clickedElement = event.target.parentNode;
+  console.log("clickedElement >", clickedElement);
+
+  const clickedId = Number(event.target.parentNode.id);
+  console.log("clickedId >", typeof clickedId);
+  
+  const deleteMatch = () => savedCovers.map((cover, index) => {
+    // console.log("saved covers beforee splice >", savedCovers);
+    // console.log("cover.id >", typeof cover.id);
+    // console.log("id match?", cover.id === clickedId);
+    // console.log("index >", index);
+    cover.id === clickedId ? savedCovers.splice(index, 1) : console.log("not a match!");
+    // console.log("saved covers after splice >", savedCovers);
+  });
+  deleteMatch();
+  //
+  generateSavedView();
+  
+  
+  // const toDelete = event.target.closest(".overlay");
+  // console.log("toDelete >", toDelete);
 }
