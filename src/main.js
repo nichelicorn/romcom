@@ -78,15 +78,14 @@ function generateSavedView() {
   savedCoversSection.innerHTML = "";
   
   let tinyCovers = savedCovers.map(cover => {
-    savedCoversSection.innerHTML += `
-      <section class="mini-cover" id=${cover.id}>
-        <img class="cover-image" src="${cover.cover}" id="coverImage">
-        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
-      </section>
-    `;
+    savedCoversSection.innerHTML += 
+      `<section class="mini-cover" id=${cover.id}>
+          <img class="cover-image" src="${cover.cover}" id="coverImage">
+          <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
+          <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
+          <img class="price-tag" src="./assets/price.png">
+          <img class="overlay" src="./assets/overlay.png">
+        </section>`;
     return cover;
   });
 
@@ -107,33 +106,22 @@ function deleteSavedCover(event) {
 // Display functions
 function showForm(event) {
   event.preventDefault();
-  // formView.classList.remove("hidden");
   displayElement(formView);
-  // homeBtn.classList.remove("hidden");
   displayElement(homeBtn);
   displayElement(savedCoversBtn);
-  // homeView.classList.add("hidden");
   hideElement(homeView);
   hideElement(savedView);
-  // newCoverBtn.classList.add("hidden");
   hideElement(newCoverBtn);
-  // saveCoverBtn.classList.add("hidden");
   hideElement(saveCoverBtn);
 };
 
 function showSaved(event) {
   event.preventDefault();
-  // savedView.classList.remove("hidden");
   displayElement(savedView);
-  // homeBtn.classList.remove("hidden");
   displayElement(homeBtn);
-  // homeView.classList.add("hidden");
   hideElement(homeView);
-  // formView.classList.add("hidden");
   hideElement(formView);
-  // newCoverBtn.classList.add("hidden");
   hideElement(newCoverBtn);
-  // saveCoverBtn.classList.add("hidden");
   hideElement(saveCoverBtn);
   hideElement(savedCoversBtn);
 
@@ -142,23 +130,17 @@ function showSaved(event) {
 
 function showHome(event) {
   event.preventDefault();
-  // homeView.classList.remove("hidden");
   displayElement(homeView);
-  // saveCoverBtn.classList.remove("hidden");
   displayElement(saveCoverBtn);
-  // newCoverBtn.classList.remove("hidden");
   displayElement(newCoverBtn);
   displayElement(savedCoversBtn);
-  // formView.classList.add("hidden");
   hideElement(formView);
-  // savedView.classList.add("hidden");
   hideElement(savedView);
-  // homeBtn.classList.add("hidden");
   hideElement(homeBtn);
 };
 
 function displayCurrentCover() {
-  console.log(`The current cover is`, currentCover);
+  // console.log(`The current cover is`, currentCover);
   coverImage.src = currentCover.cover;
   coverTitle.innerText = currentCover.title;
   tag1.innerText = currentCover.tagline1;
