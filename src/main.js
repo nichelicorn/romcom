@@ -123,12 +123,19 @@ function showSaved(event) {
 
 function showHome(event) {
   event.preventDefault();
-  homeView.classList.remove("hidden");
-  saveCoverBtn.classList.remove("hidden");
-  newCoverBtn.classList.remove("hidden");
-  formView.classList.add("hidden");
-  savedView.classList.add("hidden");
-  homeBtn.classList.add("hidden");
+  // homeView.classList.remove("hidden");
+  displayElement(homeView);
+  // saveCoverBtn.classList.remove("hidden");
+  displayElement(saveCoverBtn);
+  // newCoverBtn.classList.remove("hidden");
+  displayElement(newCoverBtn);
+  displayElement(savedCoversBtn);
+  // formView.classList.add("hidden");
+  hideElement(formView);
+  // savedView.classList.add("hidden");
+  hideElement(savedView);
+  // homeBtn.classList.add("hidden");
+  hideElement(homeBtn);
 };
 
 
