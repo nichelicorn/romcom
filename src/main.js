@@ -1,5 +1,5 @@
 // CURRENT TASK
-// * 4: Saving & viewing covers
+// * 5: Deleting Saved Covers
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -200,7 +200,6 @@ function saveCurrentCover(event) {
   // console.log("savedCovers >", savedCovers);
 };
 
-// * All the covers in the savedCovers array should be displayed in the saved covers section
 function generateSavedView() {
   
   savedCoversSection.innerHTML = "";
@@ -222,5 +221,14 @@ function generateSavedView() {
   // display each of the saved covers as a small icon
   // console.log("tiny covers >", tinyCovers);
 
-  console.log("equality check for length >", savedCovers.length === tinyCovers.length)
+  // console.log("equality check for length >", savedCovers.length === tinyCovers.length)
 };
+
+// * From the saved covers view, if a user double clicks a saved poster, it will be deleted
+// * Hint: How will you update the data model to achieve this? Hint: Look into this user event Note: None of this needs to persist on page load (https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)
+function deleteSavedCover(id) {
+  const cover = () => {
+    return savedCovers.find(cover => cover.id === id);
+  }
+  console.log("cover to delete >", cover);
+}
