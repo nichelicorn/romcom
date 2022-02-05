@@ -23,12 +23,12 @@ const savedView = document.getElementById("savedView");
 
 // 🎧 Event listeners
 window.addEventListener("load", createRandomCover); 
+homeBtn.addEventListener("click", showHome);
+makeBookBtn.addEventListener("click", createCustomCover);
+makeCoverBtn.addEventListener("click", showForm);
 newCoverBtn.addEventListener("click", createRandomCover);
 saveCoverBtn.addEventListener("click", saveCurrentCover);
 savedCoversBtn.addEventListener("click", showSaved);
-makeCoverBtn.addEventListener("click", showForm);
-homeBtn.addEventListener("click", showHome);
-makeBookBtn.addEventListener("click", createCustomCover);
 savedCoversSection.addEventListener("dblclick", deleteSavedCover);
 
 // ⚙️ Page functionaity
