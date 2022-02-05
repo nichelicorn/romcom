@@ -6,14 +6,14 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ## To do
 ### Refactoring
-* add navigation key to saved covers view
-* add header / footer
+
 * relocate controls to the side of the page?
 * refactor CSS to create responsive layout
 * deploy to GitHub
 * launch GitHub pages
 ### Project development
 * 6: Extensions
+  * add by line to form / DOM
   * Here’s a list of possible extensions to implement - but ONLY IF your team has completed all the previous iterations AND have cleaned up your code to make it DRYer and more readable.
   * You are welcome to add your own extensions. Be sure they are thoughtful in terms of UX/UI, and that they do not break any prior functionality.
   * Implement data validation and error handling into the form (disable the button until all fields are filled, provide error messages if data entered is not correct, etc)
