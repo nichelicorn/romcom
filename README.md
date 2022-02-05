@@ -6,7 +6,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ## To do
 ### Refactoring
-* hide saved covers on form view
 * add navigation key to saved covers view
 * add header / footer
 * relocate controls to the side of the page?

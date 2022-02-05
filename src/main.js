@@ -1,5 +1,7 @@
 // CURRENT TASK
 // basic iteration complete!!
+// Refactoring
+// * add navigation key to saved covers view
 
 // 💐 Welcome to RomCom!
 
