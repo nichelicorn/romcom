@@ -52,6 +52,8 @@ makeCoverBtn.addEventListener("click", showForm);
 homeBtn.addEventListener("click", showHome);
 // on makeBookBtn click, make custom cover
 makeBookBtn.addEventListener("click", createCustomCover);
+// doubleclick on saved cover section to delete selected poster
+savedCoversSection.addEventListener("dblclick", deleteSavedCover);
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -207,13 +209,13 @@ function generateSavedView() {
   let tinyCovers = savedCovers.map(cover => {
     // console.log("cover details >", cover);
     savedCoversSection.innerHTML += `
-    <section class="mini-cover">
-    <img class="cover-image" src="${cover.cover}" id="coverImage">
-    <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
-    <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
-    <img class="price-tag" src="./assets/price.png">
-    <img class="overlay" src="./assets/overlay.png">
-    </section>
+      <section class="mini-cover" id=${cover.id}>
+        <img class="cover-image" src="${cover.cover}" id="coverImage">
+        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>
     `;
     // console.log("cover HTML >", cover);
     return cover;
@@ -226,9 +228,10 @@ function generateSavedView() {
 
 // * From the saved covers view, if a user double clicks a saved poster, it will be deleted
 // * Hint: How will you update the data model to achieve this? Hint: Look into this user event Note: None of this needs to persist on page load (https://developer.mozilla.org/en-US/docs/Web/API/Element/dblclick_event)
-function deleteSavedCover(id) {
-  const cover = () => {
-    return savedCovers.find(cover => cover.id === id);
-  }
-  console.log("cover to delete >", cover);
+function deleteSavedCover(event) {
+  // console.log("event.target >", event.target);
+  // console.log("closest cover?", event.target.closest(".overlay"));
+  const toDelete = event.target.closest(".overlay");
+
+  console.log("toDelete >", toDelete);
 }
