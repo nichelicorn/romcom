@@ -1,7 +1,5 @@
 // CURRENT TASK
 // * 4: Saving & viewing covers
-// * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
-
 
 // Create variables targetting the relevant DOM elements here 👇
 // image
@@ -30,6 +28,8 @@ const homeView = document.getElementById("homeView");
 const formView = document.getElementById("formView");
 // saved covers view page
 const savedView = document.getElementById("savedView");
+// saved covers display area
+const savedCoversSection = document.getElementById("savedCoversSection");
 
 // We've provided a few variables below
 let savedCovers = [
@@ -65,7 +65,7 @@ function createRandomCover() {
   // const image = covers[getRandomIndex(covers)];
   // const image = getRandomImage();
   const image = getRandomElement(covers);
-  coverImage.src = image;
+  // coverImage.src = image;
   // const title = titles[getRandomIndex(titles)];
   const title = getRandomElement(titles);
   // const adjective1 = descriptors[getRandomIndex(descriptors)];
@@ -140,6 +140,8 @@ function showSaved(event) {
   formView.classList.add("hidden");
   newCoverBtn.classList.add("hidden");
   saveCoverBtn.classList.add("hidden");
+
+  generateSavedView();
 };
 
 function showHome(event) {
@@ -186,9 +188,36 @@ function displayCurrentCover() {
   tag2.innerText = currentCover.tagline2;
 };
 
-// * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
 function saveCurrentCover(event) {
   event.preventDefault();
-  savedCovers.push(currentCover);
-  console.log("savedCovers >", savedCovers);
+  
+  if (savedCovers.includes(currentCover)) {
+    // console.log("oh no! this is a duplicate cover!");
+    alert("This cover is already saved! Having fun? Try making a new cover!");
+  } else {
+    savedCovers.push(currentCover);
+  }
+  // console.log("savedCovers >", savedCovers);
+};
+
+// * When a user clicks the “View Saved Covers” button, we should see the saved covers section
+function generateSavedView() {
+  savedCoversSection.innerHTML = "";
+
+  let tinyCovers = savedCovers.map(cover => {
+    // console.log("cover details >", cover);
+    savedCoversSection.innerHTML += `
+      <section class="mini-cover">
+        <img class="cover-image" src="${cover.cover}" id="coverImage">
+        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>
+    `;
+    // console.log("cover HTML >", cover);
+    return cover;
+  });
+  // display each of the saved covers as a small icon
+  console.log("tiny covers >", tinyCovers);
 };
