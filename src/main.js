@@ -63,39 +63,57 @@ function createCustomCover(event) {
   displayCurrentCover();
 };
 
-// Helper functions
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
+function saveCurrentCover(event) {
+  event.preventDefault();
+  
+  if (savedCovers.includes(currentCover)) {
+    alert("This cover is already saved! Having fun? Try making a new cover!");
+  } else {
+    savedCovers.push(currentCover);
+  }
 };
 
-function getRandomElement(array) {
-  return array[getRandomIndex(array)];
+function generateSavedView() {  
+  savedCoversSection.innerHTML = "";
+  
+  let tinyCovers = savedCovers.map(cover => {
+    savedCoversSection.innerHTML += `
+      <section class="mini-cover" id=${cover.id}>
+        <img class="cover-image" src="${cover.cover}" id="coverImage">
+        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
+        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
+        <img class="price-tag" src="./assets/price.png">
+        <img class="overlay" src="./assets/overlay.png">
+      </section>
+    `;
+    return cover;
+  });
+
+  return tinyCovers;
 };
 
-function setCurrentCover(cover) {
-  currentCover = cover;
+function deleteSavedCover(event) {
+  const clickedId = Number(event.target.parentNode.id);
+  
+  const deleteMatch = () => savedCovers.map((cover, index) => {
+    cover.id === clickedId ? savedCovers.splice(index, 1) : console.log("not a match!");
+  });
+
+  deleteMatch();
+  generateSavedView();
 };
 
-function hideElement(element) {
-  element.classList.add("hidden");
-};
-
-function displayElement(element) {
-  element.classList.remove("hidden");
-};
-
-// function toggleDisplay(element) {
-//   element.classList.toggle("hidden");
-// };
-
+// Display functions
 function showForm(event) {
   event.preventDefault();
   // formView.classList.remove("hidden");
   displayElement(formView);
   // homeBtn.classList.remove("hidden");
   displayElement(homeBtn);
+  displayElement(savedCoversBtn);
   // homeView.classList.add("hidden");
   hideElement(homeView);
+  hideElement(savedView);
   // newCoverBtn.classList.add("hidden");
   hideElement(newCoverBtn);
   // saveCoverBtn.classList.add("hidden");
@@ -138,7 +156,6 @@ function showHome(event) {
   hideElement(homeBtn);
 };
 
-
 function displayCurrentCover() {
   console.log(`The current cover is`, currentCover);
   coverImage.src = currentCover.cover;
@@ -147,42 +164,23 @@ function displayCurrentCover() {
   tag2.innerText = currentCover.tagline2;
 };
 
-function saveCurrentCover(event) {
-  event.preventDefault();
-  
-  if (savedCovers.includes(currentCover)) {
-    alert("This cover is already saved! Having fun? Try making a new cover!");
-  } else {
-    savedCovers.push(currentCover);
-  }
+// Helper functions
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
 };
 
-function generateSavedView() {  
-  savedCoversSection.innerHTML = "";
-  
-  let tinyCovers = savedCovers.map(cover => {
-    savedCoversSection.innerHTML += `
-      <section class="mini-cover" id=${cover.id}>
-        <img class="cover-image" src="${cover.cover}" id="coverImage">
-        <h2 class="cover-title" id="coverTitle">${cover.title}</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">${cover.tagline1}</span> and <span class="tagline-2" id="tag2">${cover.tagline2}</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
-      </section>
-    `;
-    return cover;
-  });
-
-  // return tinyCovers;
+function getRandomElement(array) {
+  return array[getRandomIndex(array)];
 };
 
-function deleteSavedCover(event) {
-  const clickedId = Number(event.target.parentNode.id);
-  
-  const deleteMatch = () => savedCovers.map((cover, index) => {
-    cover.id === clickedId ? savedCovers.splice(index, 1) : console.log("not a match!");
-  });
+function setCurrentCover(cover) {
+  currentCover = cover;
+};
 
-  deleteMatch();
-  generateSavedView();
+function hideElement(element) {
+  element.classList.add("hidden");
+};
+
+function displayElement(element) {
+  element.classList.remove("hidden");
 };
