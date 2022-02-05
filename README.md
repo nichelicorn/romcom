@@ -5,10 +5,7 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 ## To do
 
 ### Project development
-* 3: Creating a new cover
-
 * 4: Saving & viewing covers
-  * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
   * If a user clicks the “Save Cover” more than once on a single cover, it will still only be saved once (no duplicates)
   * When a user clicks the “View Saved Covers” button, we should see the saved covers section
   * All the covers in the savedCovers array should be displayed in the saved covers section

@@ -1,9 +1,6 @@
 // CURRENT TASK
-// * 3: Creating a new cover
-// * In the new cover form view, users should be able to fill out the four input fields and then hit the Make My Book button
-// * When the Make My Book button is clicked, several things will happen: 
-// * Change back to the main home view (hiding the form view again)
-// * Display the newly created cover image, title, and descriptors in the main cover
+// * 4: Saving & viewing covers
+// * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
 
 
 // Create variables targetting the relevant DOM elements here 👇
@@ -46,7 +43,7 @@ window.addEventListener("load", createRandomCover);
 // on newBtn click, generate a new random cover to display in the DOM
 newCoverBtn.addEventListener("click", createRandomCover);
 // on saveBtn click, add the current cover to the savedCovers array (should not save duplicate covers)
-
+saveCoverBtn.addEventListener("click", saveCurrentCover);
 // on savedBtn click, display view saved-view page (line 26 index.html)
 savedCoversBtn.addEventListener("click", showSaved);
 // on makeBtn click, display view form-view page (line 29 index.html)
@@ -176,17 +173,22 @@ function createCustomCover(event) {
   // console.log("current cover >", currentCover);
 
   showHome(event);
-  // * Display the newly created cover image, title, and descriptors in the main cover
-
   displayCurrentCover();
 };
 
 
 function displayCurrentCover() {
   console.log(`The current cover is`, currentCover);
-  console.log("coverImage >", coverImage);
+  // console.log("coverImage >", coverImage);
   coverImage.src = currentCover.cover;
   coverTitle.innerText = currentCover.title;
   tag1.innerText = currentCover.tagline1;
   tag2.innerText = currentCover.tagline2;
+};
+
+// * When a user clicks the “Save Cover” button, the current cover will be added to the savedCovers array
+function saveCurrentCover(event) {
+  event.preventDefault();
+  savedCovers.push(currentCover);
+  console.log("savedCovers >", savedCovers);
 };
