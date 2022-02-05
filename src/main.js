@@ -68,31 +68,55 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-function setCurrentCover(cover) {
-  currentCover = cover;
-};
-
 function getRandomElement(array) {
   return array[getRandomIndex(array)];
 };
 
+function setCurrentCover(cover) {
+  currentCover = cover;
+};
+
+function hideElement(element) {
+  element.classList.add("hidden");
+};
+
+function displayElement(element) {
+  element.classList.remove("hidden");
+};
+
+// function toggleDisplay(element) {
+//   element.classList.toggle("hidden");
+// };
+
 function showForm(event) {
   event.preventDefault();
-  formView.classList.remove("hidden");
-  homeBtn.classList.remove("hidden");
-  homeView.classList.add("hidden");
-  newCoverBtn.classList.add("hidden");
-  saveCoverBtn.classList.add("hidden");
+  // formView.classList.remove("hidden");
+  displayElement(formView);
+  // homeBtn.classList.remove("hidden");
+  displayElement(homeBtn);
+  // homeView.classList.add("hidden");
+  hideElement(homeView);
+  // newCoverBtn.classList.add("hidden");
+  hideElement(newCoverBtn);
+  // saveCoverBtn.classList.add("hidden");
+  hideElement(saveCoverBtn);
 };
 
 function showSaved(event) {
   event.preventDefault();
-  savedView.classList.remove("hidden");
-  homeBtn.classList.remove("hidden");
-  homeView.classList.add("hidden");
-  formView.classList.add("hidden");
-  newCoverBtn.classList.add("hidden");
-  saveCoverBtn.classList.add("hidden");
+  // savedView.classList.remove("hidden");
+  displayElement(savedView);
+  // homeBtn.classList.remove("hidden");
+  displayElement(homeBtn);
+  // homeView.classList.add("hidden");
+  hideElement(homeView);
+  // formView.classList.add("hidden");
+  hideElement(formView);
+  // newCoverBtn.classList.add("hidden");
+  hideElement(newCoverBtn);
+  // saveCoverBtn.classList.add("hidden");
+  hideElement(saveCoverBtn);
+  hideElement(savedCoversBtn);
 
   generateSavedView();
 };
