@@ -22,7 +22,7 @@ const newCoverBtn = document.getElementById("newBtn");
 const saveCoverBtn = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
 const savedCoversSection = document.getElementById("savedCoversSection");
-const savedInstructions = document.getElementById("savedInstructions");
+// const savedInstructions = document.getElementById("savedInstructions");
 const savedView = document.getElementById("savedView");
 
 // 🎧 Event listeners
@@ -92,14 +92,14 @@ function generateSavedView() {
   //   console.log(savedCoversSection.innerHTML);
   // };
 
-  // savedCoversSection.innerHTML = "";
+  savedCoversSection.innerHTML = "";
 
   // !savedCovers.length ? savedCoversSection.innerHTML = "Save a cover on the home page 💾" : "";
 
   if (!savedCovers.length) {
     savedCoversSection.innerHTML = "Save a cover on the home page 💾";
     hideElement(savedInstructions);
-  }
+  };
   
   let tinyCovers = savedCovers.map(cover => {
     savedCoversSection.innerHTML += 
@@ -117,6 +117,7 @@ function generateSavedView() {
 };
 
 function deleteSavedCover(event) {
+  console.log("hello?");
   const clickedId = Number(event.target.parentNode.id);
   
   const deleteMatch = () => savedCovers.map((cover, index) => {
