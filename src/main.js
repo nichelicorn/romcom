@@ -2,6 +2,9 @@
 // basic iteration complete!!
 // Refactoring
 
+// * refactor CSS to create responsive layout
+
+
 // 💐 Welcome to RomCom!
 
 // 🌐 Query Selectors & Global variables
@@ -22,7 +25,7 @@ const newCoverBtn = document.getElementById("newBtn");
 const saveCoverBtn = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
 const savedCoversSection = document.getElementById("savedCoversSection");
-// const savedInstructions = document.getElementById("savedInstructions");
+const savedInstructions = document.getElementById("savedInstructions");
 const savedView = document.getElementById("savedView");
 
 // 🎧 Event listeners
@@ -34,8 +37,6 @@ newCoverBtn.addEventListener("click", createRandomCover);
 saveCoverBtn.addEventListener("click", saveCurrentCover);
 savedCoversBtn.addEventListener("click", showSaved);
 savedCoversSection.addEventListener("dblclick", deleteSavedCover);
-
-// controls.addEventListener("click", hideInstructions);
 
 // ⚙️ Page functionaity
 function createRandomCover() {
@@ -70,31 +71,12 @@ function createCustomCover(event) {
 
 function saveCurrentCover(event) {
   event.preventDefault();
-  
-  // if (savedCovers.includes(currentCover)) {
-  //   alert("This cover is already saved! Having fun? Try making a new cover!");
-  // } else {
-  //   savedCovers.push(currentCover);
-  // }
 
   savedCovers.includes(currentCover) ? alert("This cover has already been saved. Try making a new cover!") : savedCovers.push(currentCover);
 };
 
 function generateSavedView() {
-  // console.log("savedCovers >", savedCovers);
-  // console.log("!savedCovers.length ?", !savedCovers.length);
-
-  // savedCoversSection.innerHTML = "Save a cover on the home page 💾";
-  
-  // if (!savedCovers.length) {
-  //   console.log("there are no covers");
-  //   savedCoversSection.innerHTML += "Save a cover on the home page 💾";
-  //   console.log(savedCoversSection.innerHTML);
-  // };
-
   savedCoversSection.innerHTML = "";
-
-  // !savedCovers.length ? savedCoversSection.innerHTML = "Save a cover on the home page 💾" : "";
 
   if (!savedCovers.length) {
     savedCoversSection.innerHTML = "Save a cover on the home page 💾";
@@ -117,7 +99,6 @@ function generateSavedView() {
 };
 
 function deleteSavedCover(event) {
-  console.log("hello?");
   const clickedId = Number(event.target.parentNode.id);
   
   const deleteMatch = () => savedCovers.map((cover, index) => {
@@ -135,17 +116,17 @@ function showForm(event) {
   displayElement(homeBtn);
   displayElement(savedCoversBtn);
   hideElement(homeView);
-  hideElement(savedView);
   hideElement(newCoverBtn);
   hideElement(saveCoverBtn);
+  hideElement(savedView);
 };
 
 function showSaved(event) {
   event.preventDefault();
-  displayElement(savedView);
   displayElement(homeBtn);
-  hideElement(homeView);
+  displayElement(savedView);
   hideElement(formView);
+  hideElement(homeView);
   hideElement(newCoverBtn);
   hideElement(saveCoverBtn);
   hideElement(savedCoversBtn);
@@ -156,12 +137,12 @@ function showSaved(event) {
 function showHome(event) {
   event.preventDefault();
   displayElement(homeView);
-  displayElement(saveCoverBtn);
   displayElement(newCoverBtn);
+  displayElement(saveCoverBtn);
   displayElement(savedCoversBtn);
   hideElement(formView);
-  hideElement(savedView);
   hideElement(homeBtn);
+  hideElement(savedView);
 };
 
 function displayCurrentCover() {
@@ -191,9 +172,4 @@ function hideElement(element) {
 
 function displayElement(element) {
   element.classList.remove("hidden");
-};
-
-function hideInstructions(event) {
-  console.log("event >", event);
-  hideElement(instructions);
 };
