@@ -11,9 +11,11 @@ let currentCover;
 let savedCovers = [];
 let tag1 = document.getElementById("tag1");
 let tag2 = document.getElementById("tag2");
+const controls = document.getElementById("controls");
 const formView = document.getElementById("formView");
 const homeBtn = document.getElementById("homeBtn");
 const homeView = document.getElementById("homeView");
+const instructions = document.getElementById("instructions");
 const makeBookBtn = document.getElementById("makeBookBtn");
 const makeCoverBtn = document.getElementById("makeBtn");
 const newCoverBtn = document.getElementById("newBtn");
@@ -31,6 +33,8 @@ newCoverBtn.addEventListener("click", createRandomCover);
 saveCoverBtn.addEventListener("click", saveCurrentCover);
 savedCoversBtn.addEventListener("click", showSaved);
 savedCoversSection.addEventListener("dblclick", deleteSavedCover);
+
+controls.addEventListener("click", hideInstructions);
 
 // ⚙️ Page functionaity
 function createRandomCover() {
@@ -167,4 +171,9 @@ function hideElement(element) {
 
 function displayElement(element) {
   element.classList.remove("hidden");
+};
+
+function hideInstructions(event) {
+  console.log("event >", event);
+  hideElement(instructions);
 };
