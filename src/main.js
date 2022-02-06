@@ -22,6 +22,7 @@ const newCoverBtn = document.getElementById("newBtn");
 const saveCoverBtn = document.getElementById("saveBtn");
 const savedCoversBtn = document.getElementById("savedBtn");
 const savedCoversSection = document.getElementById("savedCoversSection");
+const savedInstructions = document.getElementById("savedInstructions");
 const savedView = document.getElementById("savedView");
 
 // 🎧 Event listeners
@@ -34,7 +35,7 @@ saveCoverBtn.addEventListener("click", saveCurrentCover);
 savedCoversBtn.addEventListener("click", showSaved);
 savedCoversSection.addEventListener("dblclick", deleteSavedCover);
 
-controls.addEventListener("click", hideInstructions);
+// controls.addEventListener("click", hideInstructions);
 
 // ⚙️ Page functionaity
 function createRandomCover() {
@@ -79,8 +80,26 @@ function saveCurrentCover(event) {
   savedCovers.includes(currentCover) ? alert("This cover has already been saved. Try making a new cover!") : savedCovers.push(currentCover);
 };
 
-function generateSavedView() {  
-  savedCoversSection.innerHTML = "";
+function generateSavedView() {
+  // console.log("savedCovers >", savedCovers);
+  // console.log("!savedCovers.length ?", !savedCovers.length);
+
+  // savedCoversSection.innerHTML = "Save a cover on the home page 💾";
+  
+  // if (!savedCovers.length) {
+  //   console.log("there are no covers");
+  //   savedCoversSection.innerHTML += "Save a cover on the home page 💾";
+  //   console.log(savedCoversSection.innerHTML);
+  // };
+
+  // savedCoversSection.innerHTML = "";
+
+  // !savedCovers.length ? savedCoversSection.innerHTML = "Save a cover on the home page 💾" : "";
+
+  if (!savedCovers.length) {
+    savedCoversSection.innerHTML = "Save a cover on the home page 💾";
+    hideElement(savedInstructions);
+  }
   
   let tinyCovers = savedCovers.map(cover => {
     savedCoversSection.innerHTML += 
