@@ -6,7 +6,6 @@ Have you ever wanted to write a romance novel, but didn't know where to start? F
 
 ## To do
 ### Refactoring
-* deploy to GitHub
 * launch GitHub pages
 ### Project development
 * 6: Extensions

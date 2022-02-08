@@ -2,7 +2,7 @@
 *:before,
 *:after {
   box-sizing: border-box;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   text-align: center;
 }
 
@@ -49,10 +49,14 @@ body {
 
 /* ~~~~~~~~~~~~~~ HOME ~~~~~~~~~~~~~~~~ */
 .main-cover {
-  height: 80vh;
+  height: fit-content;
+  width: 77vw;
+  /* width: fit-content; */
+  /* height: 77vh; */
+  /* width: 26vw; */
+  /* height: 80vh; */
   margin: 4vh auto;
   position: relative;
-  width: 26vw;
 }
 
 .cover-image,
@@ -71,8 +75,8 @@ body {
 }
 
 .cover-title {
-  bottom: .9em;
-  font-family: 'Playball', cursive;
+  bottom: 0.9em;
+  font-family: "Playball", cursive;
   font-size: 4.5em;
   font-weight: normal;
   line-height: 90%;
@@ -85,7 +89,7 @@ body {
 }
 
 .tagline {
-  background: rgba(126, 84, 150, .5);
+  background: rgba(126, 84, 150, 0.5);
   color: #fcf4dc;
   padding: 5px;
   bottom: 5px;
@@ -135,7 +139,7 @@ body {
 }
 
 .mini-cover > .tagline {
-  background: RGBA(126, 84, 150, .5);
+  background: RGBA(126, 84, 150, 0.5);
   bottom: 5px;
   color: #fcf4dc;
   font-size: 10px;

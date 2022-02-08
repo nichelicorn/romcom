@@ -1,8 +1,8 @@
 // CURRENT TASK
 // basic iteration complete!!
 // Refactoring
-
-// * refactor CSS to create responsive layout
+// * add GitHub pages package to project
+// * deploy to GitHub
 
 
 // 💐 Welcome to RomCom!
