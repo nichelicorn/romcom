@@ -9,41 +9,43 @@
   <body>
     <header>
       <h1>✨🥀 RomCom 💘✨</h1>
-    </header>
-    <section class="controls" id="controls">
-      <button class="home-button hidden" id="homeBtn">Home</button>
-      <button class="random-cover-button" id="newBtn">Show New Random Cover</button>
-      <button class="save-cover-button" id="saveBtn">Save Cover</button>
-      <button class="view-saved-button" id="savedBtn">View Saved Covers</button>
-      <button class="make-new-button" id="makeBtn">Make Your Own Cover</button>
-    </section>
-    <section class="view home-view" id="homeView">
-      <p id="instructions">Use RomCom to create your very own romance novel cover! Click a button to make a random cover, or create your own!</p>
-      <section class="main-cover">
-        <img class="cover-image" src="./assets/prairie.jpg" id="coverImage">
-        <h2 class="cover-title" id="coverTitle">Windswept Hearts</h2>
-        <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">passion</span> and <span class="tagline-2" id="tag2">woe</span></h3>
-        <img class="price-tag" src="./assets/price.png">
-        <img class="overlay" src="./assets/overlay.png">
+      <section class="controls" id="controls">
+        <button class="home-button hidden" id="homeBtn">Home</button>
+        <button class="random-cover-button" id="newBtn">Show New Random Cover</button>
+        <button class="save-cover-button" id="saveBtn">Save Cover</button>
+        <button class="view-saved-button" id="savedBtn">View Saved Covers</button>
+        <button class="make-new-button" id="makeBtn">Make Your Own Cover</button>
       </section>
-    </section>
-    <section class="view saved-view hidden" id="savedView">
-      <p id="savedInstructions">Double click a cover to delete</p>
-      <section class="saved-covers-section" id="savedCoversSection"></section>
-    </section>
-    <section class="view form-view hidden" id="formView">
-      <form>
-        <label for="cover">Cover</label>
-        <input class="user-cover" type="text" id="userCover" placeholder="image URL"/>
-        <label for="title">Title</label>
-        <input class="user-title" type="text" id="userTitle">
-        <label for="descriptor1">First descriptor</label>
-        <input class="user-desc1" type="text" id="descriptor1" />
-        <label for="descriptor2">Second descriptor</label>
-        <input class="user-desc2" type="text" id="descriptor2" />
-        <button class="create-new-book-button" id="makeBookBtn">Make my book</button>
-      </form>
-    </section>
+    </header>
+    <main class="main">
+      <section class="view home-view content" id="homeView">
+        <p id="instructions">Use RomCom to create your very own romance novel cover! Click a button to make a random cover, or create your own!</p>
+        <section class="main-cover">
+          <img class="cover-image" src="./assets/prairie.jpg" id="coverImage">
+          <h2 class="cover-title" id="coverTitle">Windswept Hearts</h2>
+          <h3 class="tagline">A tale of <span class="tagline-1" id="tag1">passion</span> and <span class="tagline-2" id="tag2">woe</span></h3>
+          <img class="price-tag" src="./assets/price.png">
+          <img class="overlay" src="./assets/overlay.png">
+        </section>
+      </section>
+      <section class="view saved-view hidden content" id="savedView">
+        <p id="savedInstructions">Double click a cover to delete</p>
+        <section class="saved-covers-section" id="savedCoversSection"></section>
+      </section>
+      <section class="view form-view hidden content" id="formView">
+        <form>
+          <label for="cover">Cover</label>
+          <input class="user-cover" type="text" id="userCover" placeholder="image URL"/>
+          <label for="title">Title</label>
+          <input class="user-title" type="text" id="userTitle">
+          <label for="descriptor1">First descriptor</label>
+          <input class="user-desc1" type="text" id="descriptor1" />
+          <label for="descriptor2">Second descriptor</label>
+          <input class="user-desc2" type="text" id="descriptor2" />
+          <button class="create-new-book-button" id="makeBookBtn">Make my book</button>
+        </form>
+      </section>
+    </main>
     <script src="./src/data.js"></script>
     <script src="./src/Cover.js"></script>
     <script src="./src/main.js"></script>
