@@ -49,38 +49,33 @@ body {
 
 /* ~~~~~~~~~~~~~~ HOME ~~~~~~~~~~~~~~~~ */
 .main-cover {
-  /* height: fit-content; */
   height: 68vh;
-  width: 44vw;
-  /* width: fit-content; */
-  /* height: 77vh; */
-  /* width: 26vw; */
-  /* height: 80vh; */
   margin: 4vh auto;
   position: relative;
+  width: 44vw;
 }
 
 .cover-image,
 .overlay {
-  object-fit: cover;
   height: 100%;
+  object-fit: cover;
   width: 100%;
 }
 
 .cover-title,
 .tagline {
-  text-align: center;
   color: #f4ebcd;
   position: absolute;
+  text-align: center;
   width: 100%;
 }
 
 .cover-title {
   bottom: 0.9em;
+  line-height: 90%;
   font-family: "Playball", cursive;
   font-size: 4.5em;
   font-weight: normal;
-  line-height: 90%;
   margin: 0;
   padding: 0.1em;
 }
@@ -91,24 +86,24 @@ body {
 
 .tagline {
   background: rgba(126, 84, 150, 0.5);
+  bottom: 5px;
   color: #fcf4dc;
   padding: 5px;
-  bottom: 5px;
 }
 
 .price-tag {
   position: absolute;
-  top: 10px;
-  width: 22%;
   right: 15px;
+  top: 10px;
   transform: rotate(10deg);
+  width: 22%;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
   filter: opacity(65%);
   mix-blend-mode: screen;
+  position: absolute;
+  top: 0;
 }
 
 /* ~~~~~~~~~~~~~ SAVED COVERS ~~~~~~~~~~~~~~~ */
@@ -125,12 +120,9 @@ body {
 
 .mini-cover {
   height: auto;
-  /* height: fit-content; */
   width: 17vw;
-  /* height: 40vh; */
   margin: 1.3vh auto;
   position: relative;
-  /* width: 14vw; */
 }
 
 .mini-cover > .cover-title {
