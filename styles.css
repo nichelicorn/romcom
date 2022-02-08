@@ -123,10 +123,12 @@ body {
 }
 
 .mini-cover {
-  height: 40vh;
+  height: fit-content;
+  width: 17vw;
+  /* height: 40vh; */
   margin: 1.3vh auto;
   position: relative;
-  width: 14vw;
+  /* width: 14vw; */
 }
 
 .mini-cover > .cover-title {
